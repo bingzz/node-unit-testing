@@ -1,10 +1,41 @@
 import example from "../ts/example";
 import { test, expect } from '@jest/globals';
+import { Stack } from "../ts/stack";
 
 /** TEST FUNCTIONS
  * test -> test case
  * expect -> outcome of the value
+ * describe -> sets of testing
  */
+
+describe('Stack testing', () => {
+
+  let stack;
+
+  beforeEach(() => {
+    stack = new Stack();
+  });
+
+  it('is created empty', () => {
+    const stack = new Stack();
+
+    expect(stack.top).toBe(-1);
+    expect(stack.items).toStrictEqual({});
+  });
+
+  it('push to the top', () => {
+    stack.push('one');
+
+    expect(stack.top).toBe(0);
+    expect(stack.peek).toBe('one');
+  });
+
+  it('pop off', () => {
+
+  });
+
+
+});
 
 // variable to be equal
 test('adds 2 numbers', () => {
@@ -100,7 +131,8 @@ function throwError() {
 test('Throw exception', () => {
   expect(() => throwError()).toThrow();
   expect(() => throwError()).toThrow(Error);
-  
-  // 
-  expect(() => throwError()).toThrow('Error has been thrown');
+
+  // You can also use a string that must be contained in the error message or a regexp
+  // expect(() => throwError()).toThrow('Error has been thrown');
+  // expect(() => throwError()).toThrow(/thrown/);
 });

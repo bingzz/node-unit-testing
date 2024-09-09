@@ -1,28 +1,13 @@
 function add(a: number, b: number) {
-  try {
-    return a + b;
-  } catch (error) {
-    console.error('add', error);
-    return 0;
-  }
+  return a + b;
 }
 
 function subtract(a: number, b: number) {
-  try {
-    return a - b;
-  } catch (error) {
-    console.error('subtract', error);
-    return 0;
-  }
+  return a - b;
 }
 
-function clone(item: any[]) {
-  try {
-    return [...item];
-  } catch (error) {
-    console.error('clone error:', error);
-    return [];
-  }
-}
+// function clone(item: any[]) {
+//   return [...item];
+// }
 
 export default { add, subtract };
